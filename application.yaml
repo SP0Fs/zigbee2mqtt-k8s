@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: zigbee2mqtt
+  namespace: argo-cd
+spec:
+  project: spof-cluster
+  sources:
+    - repoURL: "https://github.com/SP0Fs/zigbee2mqtt-k8s.git"
+      targetRevision: HEAD
+      path: resources
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: zigbee2mqtt
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
