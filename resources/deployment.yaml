@@ -36,12 +36,13 @@ spec:
               value: "true"
             - name: "ZIGBEE2MQTT_CONFIG_SERIAL_PORT"
               value: "/dev/ttyUSB0"
-            - name: "ZIGBEE2MQTT_CONFIG_ADVANCED_NETWORK_KEY"
-              value: "GENERATE"
             - name: "ZIGBEE2MQTT_CONFIG_HOMEASSISTANT"
               value: "true"
             - name: "TZ"
               value: "Europe/Berlin"
+          envFrom:
+            - secretRef:
+                name: zigbee2mqtt-network-key
           ports:
             - containerPort: 8080
               name: http
