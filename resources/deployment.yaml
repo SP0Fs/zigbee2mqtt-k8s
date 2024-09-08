@@ -38,8 +38,6 @@ spec:
               value: "/dev/ttyUSB0"
             - name: "ZIGBEE2MQTT_CONFIG_ADVANCED_NETWORK_KEY"
               value: "GENERATE"
-            - name: "ZIGBEE2MQTT_CONFIG_FRONTEND_PORT"
-              value: "8080"
             - name: "TZ"
               value: "Europe/Berlin"
           ports:
