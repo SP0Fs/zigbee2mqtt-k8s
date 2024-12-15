@@ -40,9 +40,11 @@ spec:
               value: "true"
             - name: "TZ"
               value: "Europe/Berlin"
-          envFrom:
-            - secretRef:
-                name: zigbee2mqtt-network-key
+            - name: ZIGBEE2MQTT_CONFIG_ADVANCED_NETWORK_KEY
+              value: GENERATE
+          # envFrom:
+          #   - secretRef:
+          #       name: zigbee2mqtt-network-key
           ports:
             - containerPort: 8080
               name: http
